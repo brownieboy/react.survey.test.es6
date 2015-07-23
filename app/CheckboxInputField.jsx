@@ -1,5 +1,6 @@
 var React = require("react");
 var CheckboxInput = require("./CheckboxInput.jsx");
+
 var CheckboxInputField = React.createClass({
     render: function() {
         var name = this.props.question.name;

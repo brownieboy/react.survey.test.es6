@@ -56,24 +56,7 @@
 	var React = __webpack_require__(2);
 	var CheckboxInput = __webpack_require__(158);
 	var CheckboxInputField = __webpack_require__(159);
-
-	var CheckboxInputFields = React.createClass({
-	    displayName: "CheckboxInputFields",
-
-	    render: function render() {
-	        var that = this;
-	        var x = -1;
-	        var mappedInputFields = this.props.questions.map(function (question, key) {
-	            x++;
-	            return React.createElement(CheckboxInputField, {
-	                question: question,
-	                index: x,
-	                key: question.name,
-	                handleFieldChange: that.props.handleFieldChange });
-	        });
-	        return React.createElement("div", null, mappedInputFields);
-	    }
-	});
+	var CheckboxInputFields = __webpack_require__(160);
 
 	var SurveyApp = React.createClass({
 	    displayName: "SurveyApp",
@@ -20527,6 +20510,7 @@
 
 	var React = __webpack_require__(2);
 	var CheckboxInput = __webpack_require__(158);
+
 	var CheckboxInputField = React.createClass({
 	    displayName: "CheckboxInputField",
 
@@ -20553,6 +20537,35 @@
 	});
 
 	module.exports = CheckboxInputField;
+
+/***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(2);
+	var CheckboxInputField = __webpack_require__(159);
+
+	var CheckboxInputFields = React.createClass({
+	    displayName: "CheckboxInputFields",
+
+	    render: function render() {
+	        var that = this;
+	        var x = -1;
+	        var mappedInputFields = this.props.questions.map(function (question, key) {
+	            x++;
+	            return React.createElement(CheckboxInputField, {
+	                question: question,
+	                index: x,
+	                key: question.name,
+	                handleFieldChange: that.props.handleFieldChange });
+	        });
+	        return React.createElement("div", null, mappedInputFields);
+	    }
+	});
+
+	module.exports = CheckboxInputFields;
 
 /***/ }
 /******/ ]);
