@@ -1,6 +1,6 @@
 var React = require("react");
 
-var CheckboxInput = require("./CheckboxInput");
+var CheckboxInput = require("./CheckboxInput.jsx");
  
 var CheckboxInputField = React.createClass({
     render: function() {
