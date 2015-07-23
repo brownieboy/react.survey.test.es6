@@ -54,33 +54,8 @@
 	"use strict";
 
 	var React = __webpack_require__(2);
-
 	var CheckboxInput = __webpack_require__(158);
-
-	var CheckboxInputField = React.createClass({
-	    displayName: "CheckboxInputField",
-
-	    render: function render() {
-	        var name = this.props.question.name;
-	        var that = this;
-	        var x = -1;
-	        var mappedInputElements = this.props.question.values.map(function (data, key) {
-	            x++;
-	            return React.createElement(CheckboxInput, {
-	                name: name,
-	                label: data.label,
-	                index: x,
-	                key: data.value,
-	                value: data.value,
-	                handleChange: that.handleFieldChange });
-	        });
-	        return React.createElement("div", { className: "inputFieldWrapper" }, React.createElement("p", null, this.props.question.blurb), mappedInputElements);
-	    },
-	    handleFieldChange: function handleFieldChange(elementIndex, elementChecked) {
-	        // A little more pre-processing, then pass the data upwards again
-	        this.props.handleFieldChange(this.props.index, elementIndex, elementChecked);
-	    }
-	});
+	var CheckboxInputField = __webpack_require__(159);
 
 	var CheckboxInputFields = React.createClass({
 	    displayName: "CheckboxInputFields",
@@ -20543,6 +20518,41 @@
 	  }
 	});
 	module.exports = CheckboxInput;
+
+/***/ },
+/* 159 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(2);
+	var CheckboxInput = __webpack_require__(158);
+	var CheckboxInputField = React.createClass({
+	    displayName: "CheckboxInputField",
+
+	    render: function render() {
+	        var name = this.props.question.name;
+	        var that = this;
+	        var x = -1;
+	        var mappedInputElements = this.props.question.values.map(function (data, key) {
+	            x++;
+	            return React.createElement(CheckboxInput, {
+	                name: name,
+	                label: data.label,
+	                index: x,
+	                key: data.value,
+	                value: data.value,
+	                handleChange: that.handleFieldChange });
+	        });
+	        return React.createElement("div", { className: "inputFieldWrapper" }, React.createElement("p", null, this.props.question.blurb), mappedInputElements);
+	    },
+	    handleFieldChange: function handleFieldChange(elementIndex, elementChecked) {
+	        // A little more pre-processing, then pass the data upwards again
+	        this.props.handleFieldChange(this.props.index, elementIndex, elementChecked);
+	    }
+	});
+
+	module.exports = CheckboxInputField;
 
 /***/ }
 /******/ ]);
