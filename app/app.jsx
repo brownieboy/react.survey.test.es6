@@ -9,7 +9,7 @@ var CheckboxInput = React.createClass({
               checked={this.props.checked}
               onClick={this.handleChange}
               value={this.props.value} />
-              {this.props.label}
+              {this.props.index + 1}. {this.props.label}
       </label>
     );
   },
@@ -135,8 +135,6 @@ var questions = [{ name: "fruits",
                  ]
                 }];
 
-
-// var checkBoxField = React.render(<CheckboxInputField question={question} />, document.getElementById("main"));
 
 var checkBoxField = React.render(<SurveyApp questions={questions} />, document.getElementById("main"));
 

@@ -63,7 +63,7 @@
 	            name: this.props.name,
 	            checked: this.props.checked,
 	            onClick: this.handleChange,
-	            value: this.props.value }), this.props.label);
+	            value: this.props.value }), this.props.index, ". ", this.props.label);
 	    },
 	    handleChange: function handleChange(e) {
 	        // Just a little preprocessing before passing upwards
@@ -155,8 +155,6 @@
 	    blurb: "To which TV streaming services do you subscribe?",
 	    values: [{ label: "Netflix", value: "netflix" }, { label: "Stan", value: "stan" }, { label: "Quickflix", value: "quickflix" }, { label: "Foxtel Go", value: "foxtelgo" }]
 	}];
-
-	// var checkBoxField = React.render(<CheckboxInputField question={question} />, document.getElementById("main"));
 
 	var checkBoxField = React.render(React.createElement(SurveyApp, { questions: questions }), document.getElementById("main"));
 
