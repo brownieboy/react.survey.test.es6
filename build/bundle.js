@@ -55,21 +55,7 @@
 
 	var React = __webpack_require__(2);
 
-	var CheckboxInput = React.createClass({
-	    displayName: "CheckboxInput",
-
-	    render: function render() {
-	        return React.createElement("label", null, React.createElement("input", { type: "checkbox",
-	            name: this.props.name,
-	            checked: this.props.checked,
-	            onClick: this.handleChange,
-	            value: this.props.value }), this.props.index, ". ", this.props.label);
-	    },
-	    handleChange: function handleChange(e) {
-	        // Just a little preprocessing before passing upwards
-	        this.props.handleChange(this.props.index, e.target.checked);
-	    }
-	});
+	var CheckboxInput = __webpack_require__(158);
 
 	var CheckboxInputField = React.createClass({
 	    displayName: "CheckboxInputField",
@@ -20532,6 +20518,31 @@
 	module.exports = onlyChild;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 158 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(2);
+
+	var CheckboxInput = React.createClass({
+	  displayName: "CheckboxInput",
+
+	  render: function render() {
+	    return React.createElement("label", null, React.createElement("input", { type: "checkbox",
+	      name: this.props.name,
+	      checked: this.props.checked,
+	      onClick: this.handleChange,
+	      value: this.props.value }), this.props.index + 3, ". ", this.props.label);
+	  },
+	  handleChange: function handleChange(e) {
+	    // Just a little preprocessing before passing upwards
+	    this.props.handleChange(this.props.index, e.target.checked);
+	  }
+	});
+	module.exports = CheckboxInput;
 
 /***/ }
 /******/ ]);

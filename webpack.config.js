@@ -1,6 +1,6 @@
 var webpack = require("webpack");
 var path = require('path');
-// var HtmlwebpackPlugin = require('html-webpack-plugin');
+var HtmlwebpackPlugin = require('html-webpack-plugin');
 var merge = require('webpack-merge');
 
 var TARGET = process.env.TARGET;
@@ -26,7 +26,12 @@ var common = {
             // operate only on our app directory
             include: path.resolve(ROOT_PATH, 'app')
         }]
-    }
+    },
+     plugins: [
+        new HtmlwebpackPlugin({
+            title: 'Survey test app'
+        })
+    ]
 };
 
 if (TARGET === 'build') {
