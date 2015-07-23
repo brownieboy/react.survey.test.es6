@@ -1,3 +1,5 @@
+var React = require("react");
+
 var CheckboxInput = React.createClass({
   render: function () {
     return (

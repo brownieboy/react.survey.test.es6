@@ -1,13 +1,13 @@
 var webpack = require("webpack");
 var path = require('path');
-var HtmlwebpackPlugin = require('html-webpack-plugin');
+// var HtmlwebpackPlugin = require('html-webpack-plugin');
 var merge = require('webpack-merge');
 
 var TARGET = process.env.TARGET;
 var ROOT_PATH = path.resolve(__dirname);
 
 var common = {
-    entry: [path.resolve(ROOT_PATH, 'app/main')],
+    entry: [path.resolve(ROOT_PATH, 'app/App')],
     resolve: {
         extensions: ['', '.js', '.jsx'],
     },
@@ -25,9 +25,6 @@ var common = {
 
             // operate only on our app directory
             include: path.resolve(ROOT_PATH, 'app')
-        }, {
-            test: /\.css$/,
-            loaders: ['style', 'css']
         }]
     }
 };
