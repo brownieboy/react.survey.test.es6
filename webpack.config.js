@@ -27,9 +27,11 @@ var common = {
             include: path.resolve(ROOT_PATH, 'app')
         }]
     },
-     plugins: [
+    plugins: [
         new HtmlwebpackPlugin({
-            title: 'Survey test app'
+            title: 'Survey test app, innit',
+            template: 'app/index.html',
+            inject: "body"
         })
     ]
 };
@@ -46,16 +48,14 @@ if (TARGET === 'build') {
     });
 }
 
-if(TARGET === 'dev') {
-  module.exports = merge(common, {
-    module: {
-      loaders: [
-        {
-          test: /\.jsx?$/,
-          loaders: ['react-hot', 'babel?stage=1'],
-          include: path.resolve(ROOT_PATH, 'app')
+if (TARGET === 'dev') {
+    module.exports = merge(common, {
+        module: {
+            loaders: [{
+                test: /\.jsx?$/,
+                loaders: ['react-hot', 'babel?stage=1'],
+                include: path.resolve(ROOT_PATH, 'app')
+            }]
         }
-      ]
-    }
-  });
+    });
 }
