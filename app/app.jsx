@@ -1,3 +1,5 @@
+require("./css/app.css");
+
 var React = require("react");
 var CheckboxInput = require("./CheckboxInput.jsx");
 var CheckboxInputField = require("./CheckboxInputField.jsx");

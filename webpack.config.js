@@ -25,6 +25,9 @@ var common = {
 
             // operate only on our app directory
             include: path.resolve(ROOT_PATH, 'app')
+        }, {
+            test: /\.css$/,
+            loaders: ['style', 'css']
         }]
     },
     plugins: [
