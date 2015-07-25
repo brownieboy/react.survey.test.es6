@@ -1,6 +1,7 @@
 var webpack = require("webpack");
 var path = require('path');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var merge = require('webpack-merge');
 
 var TARGET = process.env.TARGET;
@@ -27,7 +28,9 @@ var common = {
             include: path.resolve(ROOT_PATH, 'app')
         }, {
             test: /\.css$/,
-            loaders: ['style', 'css']
+            loader: ExtractTextPlugin.extract("css-loader")
+
+            // loaders: ['style', 'css']
         }]
     },
     plugins: [
@@ -35,6 +38,9 @@ var common = {
             title: 'Survey test app, innit',
             template: 'app/index.html',
             inject: "body"
+        }),
+        new ExtractTextPlugin("./css/app.css", {
+            allChunks: true
         })
     ]
 };
